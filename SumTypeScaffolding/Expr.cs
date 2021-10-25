@@ -2,6 +2,8 @@ using System;
 
 namespace SumTypeOO
 {
+    // A simple static class with a helper function to construct each case of the
+    // sum type. This aids with type inference.
     public static class Expr
     {
         public static ExprValue<A> Value<A>(A v) =>
