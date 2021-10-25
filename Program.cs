@@ -30,8 +30,8 @@ namespace SumTypeOO
 
             var a = new ExprValue<int>(2);
             var b = ExprMap.Make(func, a);
-            var c = ExprApply<Func<int, int>>.Make<int>(b, new ExprValue<int>(3));
-            var d = ExprApply<int>.Make<int>(c, new ExprValue<int>(4));
+            var c = ExprApply.Make(b, new ExprValue<int>(3));
+            var d = ExprApply.Make(c, new ExprValue<int>(4));
             var result = d.Accept(new ExprEvaluator<int>());
             Console.WriteLine(result);
 
