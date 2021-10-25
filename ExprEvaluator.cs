@@ -2,6 +2,8 @@ using System;
 
 namespace SumTypeOO
 {
+    // Writing operations for the sum type requires implementing the visitor to operate on each
+    // case.
     public sealed class ExprEvaluator<A> : IExprVisitor<A, A>
     {
         private record ExprMapEvaluator()
