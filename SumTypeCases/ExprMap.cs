@@ -3,7 +3,7 @@ using System;
 namespace SumTypeOO
 {
     // These two interfaces encode the existential type for the Map case.
-    // That is, for an ExprApply<A> there exists some type B such that we have
+    // That is, for an ExprMap<A> there exists some type B such that we have
     // a Func<B,A> and an IExprElement<B>.
     // However, we don't know what that type B is when we interact with it
     // so we must provide a universally quantified function.
