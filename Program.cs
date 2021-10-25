@@ -28,10 +28,10 @@ namespace SumTypeOO
             Func<int, Func<int, Func<int, int>>> func =
                 a => b => c => a + b + c;
 
-            var a = ExprValue.Make(2);
-            var b = ExprMap.Make(func, a);
-            var c = ExprApply.Make(b, ExprValue.Make(3));
-            var d = ExprApply.Make(c, ExprValue.Make(4));
+            var a = Expr.Value(2);
+            var b = Expr.Map(func, a);
+            var c = Expr.Apply(b, Expr.Value(3));
+            var d = Expr.Apply(c, Expr.Value(4));
             var result = d.Accept(new ExprEvaluator<int>());
             Console.WriteLine(result);
 

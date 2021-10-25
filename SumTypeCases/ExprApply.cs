@@ -45,12 +45,4 @@ namespace SumTypeOO
 
         public abstract R Accept<R>(IExprApplyVisitor<A, R> visitor);
     }
-
-    public static class ExprApply
-    {
-        public static ExprApply<A> Make<A, B>(
-            IExprElement<Func<B, A>> f,
-            IExprElement<B> v) =>
-            ExprApply<A>.Make<B>(f,v);
-    }
 }

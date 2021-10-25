@@ -41,10 +41,4 @@ namespace SumTypeOO
 
         public abstract R Accept<R>(IMapVisitor<A, R> visitor);
     }
-
-    public static class ExprMap
-    {
-        public static ExprMap<A> Make<A, B>(Func<B, A> f, IExprElement<B> v) =>
-            ExprMap<A>.Make<B>(f, v);
-    }
 }
