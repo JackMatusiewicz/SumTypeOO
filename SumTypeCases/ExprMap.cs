@@ -37,7 +37,7 @@ namespace SumTypeOO
             new MapImpl<B>(f, v);
 
         public virtual R Accept<R>(IExprVisitor<A, R> visitor) =>
-            throw new Exception("Impossible");
+            throw new Exception("Unreachable");
 
         public abstract R Accept<R>(IMapVisitor<A, R> visitor);
     }
