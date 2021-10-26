@@ -17,7 +17,7 @@ namespace SumTypeOO
         internal static ExprCata<A, R> Make<A, R>(IExprCata<R> cata) =>
             new ExprCata<A, R>(cata);
 
-        public static R Evaluate<A, R>(IExprElement<A> element, IExprCata<R> cata)
+        public static R Evaluate<A, R>(this IExprCata<R> cata, IExprElement<A> element)
         {
             var exprCata = Make<A, R>(cata);
             return element.Accept(exprCata);

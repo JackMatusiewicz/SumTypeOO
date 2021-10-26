@@ -29,14 +29,15 @@ namespace SumTypeOO
                 a => b => c => a + b + c;
 
             var a = Expr.Value(2);
-            var b = Expr.Map(func, a);
-            var c = Expr.Apply(b, Expr.Value(3));
-            var d = Expr.Apply(c, Expr.Value(4));
-            var result = d.Accept(new ExprEvaluator<int>());
+            var b =
+                a.Map(func)
+                    .Apply(Expr.Value(3))
+                    .Apply(Expr.Value(4));
+            var result = b.Accept(new ExprEvaluator<int>());
             Console.WriteLine(result);
 
             var graphVisCata = new GraphVizGenerator();
-            var r = ExprCata.Evaluate(d, graphVisCata);
+            var r = graphVisCata.Evaluate(b);
             Console.WriteLine(r.Item1.ToDotFileContents());
             return;
         }
