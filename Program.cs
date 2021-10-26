@@ -35,6 +35,9 @@ namespace SumTypeOO
             var result = d.Accept(new ExprEvaluator<int>());
             Console.WriteLine(result);
 
+            var graphVisCata = new GraphVizGenerator();
+            var r = ExprCata.Evaluate(d, graphVisCata);
+            Console.WriteLine(r.Item1.ToDotFileContents());
             return;
         }
     }

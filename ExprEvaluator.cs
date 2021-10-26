@@ -38,5 +38,5 @@ namespace SumTypeOO
 
         public A Visit(ExprApply<A> v) =>
             v.Accept(new ExprApplyEvaluator());
-    } 
+    }
 }
