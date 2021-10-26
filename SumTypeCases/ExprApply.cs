@@ -21,6 +21,9 @@ namespace SumTypeOO
 
     public abstract record ExprApply<A> : IExprElement<A>, IExprApply<A>
     {
+        // This inner type is required to hide the B from the outer type.
+        // If we didn't do this then we'd have to know about B inside
+        // the visitor.
         private record ApplyImpl<B>(
             IExprElement<Func<B, A>> F,
             IExprElement<B> V)
